@@ -7,11 +7,16 @@ import java.io.FileReader;
 
 public class RandomWord {
     private String word;
-    private static final String[] words = new String[1000];
+    // dictionary may contain 1000 words
+    private static final int MAX_DICT_SIZE = 1000
+    private static final String[] words = new String[MAX_DICT_SIZE];
 
+    // path and file name of dictionary file
+    // dictionary file must be a simple text file with list of words, one in each line
     private static final String DICT_PATH = "src/main/java/gr/gamewithfx/hangmangamewithfx/";
     private static final String DICT_FILE = "hangman_en.dict";
 
+    // the constructor loads the dictionary from the dict file and chooses one by random
     public RandomWord() {
         int numOfWords = loadDictionary();
         if (numOfWords > 0) {
@@ -41,7 +46,7 @@ public class RandomWord {
             BufferedReader reader = new BufferedReader(fileReader);
 
             String line = null;
-            while (i < 1000 && (line = reader.readLine()) != null) {
+            while (i < MAX_DICT_SIZE && (line = reader.readLine()) != null) {
                 words[i] = line;
                 i++;
             }
