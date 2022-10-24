@@ -7,11 +7,15 @@ import java.io.FileReader;
 
 public class RandomWord {
     private String word;
+    // dictionary may contain 1000 words
     private static final String[] words = new String[1000];
 
+    // path and file name of dictionary file
+    // dictionary file must be a simple text file with list of words, one in each line
     private static final String DICT_PATH = "src/main/java/gr/gamewithfx/hangmangamewithfx/";
     private static final String DICT_FILE = "hangman_en.dict";
 
+    // the constructor loads the dictionary from the dict file and chooses one by random
     public RandomWord() {
         int numOfWords = loadDictionary();
         if (numOfWords > 0) {
