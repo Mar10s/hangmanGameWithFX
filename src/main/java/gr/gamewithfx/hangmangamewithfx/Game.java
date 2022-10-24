@@ -90,7 +90,7 @@ public class Game extends Gallows {
             lives--;
             updateGallows(lives, backlevel);
             if (lives == 1) {
-                playSound("bellsTolling.mp3");
+                playSound("bellsTolling.mp3"); //TODO let it play
             }
         }
 
