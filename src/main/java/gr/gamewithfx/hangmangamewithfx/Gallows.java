@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 
 public class Gallows {
     public void updateGallows(int lives, BorderPane backLevel) {
+        // testing
 
         try {
             String ABC_PATH = "src/main/resources/images/";
