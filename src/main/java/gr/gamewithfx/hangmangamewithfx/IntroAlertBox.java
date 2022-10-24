@@ -42,7 +42,7 @@ public class IntroAlertBox {
 
         Label label = new Label();
         label.setText(message);
-        Button closeButton = new Button("Let's play!");
+        Button closeButton = new Button("Let's play! or Not!");
         closeButton.setOnAction(e -> window.close());
         label.setBackground(new Background(new BackgroundFill(Color.BEIGE, CornerRadii.EMPTY, Insets.EMPTY)));
         //closeButton.setBackground(new Background(new BackgroundFill(Color.BEIGE,new CornerRadii(10),Insets.EMPTY)));
