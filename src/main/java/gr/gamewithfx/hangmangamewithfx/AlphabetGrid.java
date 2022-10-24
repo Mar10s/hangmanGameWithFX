@@ -17,6 +17,8 @@ public class AlphabetGrid {
     Game game = new Game();
     private static final String ABC_PATH = "src/main/resources/images/";
     private static final String ABC_EXT = ".png";
+
+    // the number of letters to place in one row
     private static final int GRID_SIZE_COL = 13;
     //private static final int GRID_SIZE_ROW = 2;
 
@@ -46,6 +48,7 @@ public class AlphabetGrid {
                 imageView.addEventFilter(MOUSE_CLICKED, eventHandler);
                 layout.add(imageView, gridCol, gridRow);
                 gridCol++;
+                // jump to next row if the number of max cols is reached
                 if (gridCol >= GRID_SIZE_COL) {
                     gridRow++;
                     gridCol = 0;
@@ -62,6 +65,7 @@ public class AlphabetGrid {
             FileInputStream loadImage = new FileInputStream(ABC_PATH + letter + "_guessed" + ABC_EXT);
             Image image = new Image(loadImage, 50, 50, true, true);
             ImageView imageView = new ImageView(image);
+            // calculate the position of the letter on the grid based on max number of columns in a row
             int letterPosRow = (letter - 'a') / GRID_SIZE_COL;
             int letterPosCol = (letter - 'a') % GRID_SIZE_COL;
             layout.add(imageView, letterPosCol, letterPosRow + 2);
