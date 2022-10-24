@@ -8,7 +8,8 @@ import java.io.FileReader;
 public class RandomWord {
     private String word;
     // dictionary may contain 1000 words
-    private static final String[] words = new String[1000];
+    private static final int MAX_DICT_SIZE = 1000
+    private static final String[] words = new String[MAX_DICT_SIZE];
 
     // path and file name of dictionary file
     // dictionary file must be a simple text file with list of words, one in each line
@@ -45,7 +46,7 @@ public class RandomWord {
             BufferedReader reader = new BufferedReader(fileReader);
 
             String line = null;
-            while (i < 1000 && (line = reader.readLine()) != null) {
+            while (i < MAX_DICT_SIZE && (line = reader.readLine()) != null) {
                 words[i] = line;
                 i++;
             }
